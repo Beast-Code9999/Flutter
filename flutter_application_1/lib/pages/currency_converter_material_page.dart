@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CurrencyConverterMaterialPage extends StatelessWidget {
   const CurrencyConverterMaterialPage({super.key});
@@ -28,17 +29,24 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 color: Color.fromARGB(255, 0, 0, 0),
               ),
             ),
-            TextField(
-              style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
-              decoration: InputDecoration(
-                hintText: 'Please enter the amount in USD',
-                hintStyle: TextStyle(color: Color.fromARGB(179, 0, 0, 0)),
-                suffixIcon: Icon(Icons.monetization_on_outlined),
-                suffixIconColor: Color.fromARGB(255, 0, 0, 0),
-                filled: true,
-                fillColor: Colors.white,
-                focusedBorder: border,
-                enabledBorder: border,
+            // wrap TextField widget with Padding or Container
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 10, 20),
+            child: TextField(
+                style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+                decoration: InputDecoration(
+                  hintText: 'Please enter the amount in USD',
+                  hintStyle: const TextStyle(color: Color.fromARGB(179, 0, 0, 0)),
+                  suffixIcon: const Icon(Icons.monetization_on_outlined),
+                  suffixIconColor: const Color.fromARGB(255, 0, 0, 0),
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: border,
+                  enabledBorder: border,
+                ),
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true
+                ),
               ),
             ),
           ],
