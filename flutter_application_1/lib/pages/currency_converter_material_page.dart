@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class CurrencyConverterMaterialPage extends StatelessWidget {
   const CurrencyConverterMaterialPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // add border 
+    // add border
     final border = OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.black,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(50));
+      borderSide: const BorderSide(color: Colors.black, width: 2.0),
+      borderRadius: BorderRadius.circular(50),
+    );
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(160, 203, 255, 1),
@@ -21,6 +18,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Text
             const Text(
               "0",
               style: TextStyle(
@@ -29,14 +27,18 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 color: Color.fromARGB(255, 0, 0, 0),
               ),
             ),
+
+            // Textfield
             // wrap TextField widget with Padding or Container
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 10, 20),
-            child: TextField(
+              child: TextField(
                 style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 decoration: InputDecoration(
                   hintText: 'Please enter the amount in USD',
-                  hintStyle: const TextStyle(color: Color.fromARGB(179, 0, 0, 0)),
+                  hintStyle: const TextStyle(
+                    color: Color.fromARGB(179, 0, 0, 0),
+                  ),
                   suffixIcon: const Icon(Icons.monetization_on_outlined),
                   suffixIconColor: const Color.fromARGB(255, 0, 0, 0),
                   filled: true,
@@ -45,10 +47,20 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                   enabledBorder: border,
                 ),
                 keyboardType: const TextInputType.numberWithOptions(
-                  decimal: true
+                  decimal: true,
                 ),
               ),
             ),
+
+            // Button
+            TextButton(
+              style: const ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(Colors.blue),
+                foregroundColor: WidgetStatePropertyAll(Colors.white),
+              ),
+              onPressed: () {},
+              child: const Text('Convert'),
+            )
           ],
         ),
       ),
