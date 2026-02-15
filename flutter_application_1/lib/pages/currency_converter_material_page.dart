@@ -12,7 +12,24 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
     );
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(160, 203, 255, 1),
+      backgroundColor: const Color.fromARGB(255, 40, 137, 255),
+
+      // add navbar, outisde of body widget
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 40, 137, 255),
+        elevation: 0,
+        title: const Text(
+          "Currency Converter",
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: "Times New Roman",
+          ),
+          ),         
+        centerTitle: true,
+        // actions
+        // leading
+      ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +83,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
 
                 style: ElevatedButton.styleFrom(
                 //   elevation: WidgetStatePropertyAll(10),
-                  backgroundColor: (Colors.blue),
+                  backgroundColor: (const Color.fromARGB(255, 19, 63, 99)),
                   foregroundColor: (Colors.white),
                   minimumSize: (const Size(double.infinity, 50)),
                   shape: (const RoundedRectangleBorder())
