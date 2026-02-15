@@ -56,12 +56,20 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton (
-                style: const ButtonStyle(
-                  elevation: WidgetStatePropertyAll(10),
-                  backgroundColor: WidgetStatePropertyAll(Colors.blue),
-                  foregroundColor: WidgetStatePropertyAll(Colors.white),
-                  minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
-                  shape: WidgetStatePropertyAll(RoundedRectangleBorder())
+                // style: const ButtonStyle(
+                //   elevation: WidgetStatePropertyAll(10),
+                //   backgroundColor: WidgetStatePropertyAll(Colors.blue),
+                //   foregroundColor: WidgetStatePropertyAll(Colors.white),
+                //   minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
+                //   shape: WidgetStatePropertyAll(RoundedRectangleBorder())
+                // ),
+
+                style: ElevatedButton.styleFrom(
+                //   elevation: WidgetStatePropertyAll(10),
+                  backgroundColor: (Colors.blue),
+                  foregroundColor: (Colors.white),
+                  minimumSize: (const Size(double.infinity, 50)),
+                  shape: (const RoundedRectangleBorder())
                 ),
                 onPressed: () {},
                 child: const Text('Convert'),
