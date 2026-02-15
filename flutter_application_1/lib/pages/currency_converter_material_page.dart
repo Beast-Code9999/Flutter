@@ -60,7 +60,8 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                   elevation: WidgetStatePropertyAll(10),
                   backgroundColor: WidgetStatePropertyAll(Colors.blue),
                   foregroundColor: WidgetStatePropertyAll(Colors.white),
-                  minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50))
+                  minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
+                  shape: WidgetStatePropertyAll(RoundedRectangleBorder())
                 ),
                 onPressed: () {},
                 child: const Text('Convert'),
