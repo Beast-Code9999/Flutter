@@ -46,25 +46,25 @@ class _CurrencyCoverterMaterialPage extends State<CurrencyConverterMaterialPage>
       ),
 
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Text
-            Text(
-              'AUD $result', // text = result
-              style: const TextStyle(
-                fontSize: 45,
-                fontWeight: FontWeight.w800,
-                color: Color.fromARGB(255, 0, 0, 0),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Text
+              Text(
+                'AUD ${result!= 0 ? result.toStringAsFixed(2) : result.toStringAsFixed(0)}', // text = result
+                style: const TextStyle(
+                  fontSize: 45,
+                  fontWeight: FontWeight.w800,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
               ),
-            ),
-
-            // Textfield
-            // wrap TextField widget with Padding or Container
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 10, 10, 20),
-              child: TextField(
+          
+              // Textfield
+              // wrap TextField widget with Padding or Container
+              TextField(
                 controller: textEditingController,
                 style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 decoration: InputDecoration(
@@ -83,12 +83,12 @@ class _CurrencyCoverterMaterialPage extends State<CurrencyConverterMaterialPage>
                   decimal: true,
                 ),
               ),
-            ),
 
-            // Button
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: ElevatedButton (
+              // add space useing sizebox, instead of container, which is not a const, we use sizebox to ensure only build once
+              const SizedBox(height: 10,),
+
+              // Button
+              ElevatedButton (
                 // style: const ButtonStyle(
                 //   elevation: WidgetStatePropertyAll(10),
                 //   backgroundColor: WidgetStatePropertyAll(Colors.blue),
@@ -96,7 +96,7 @@ class _CurrencyCoverterMaterialPage extends State<CurrencyConverterMaterialPage>
                 //   minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50)),
                 //   shape: WidgetStatePropertyAll(RoundedRectangleBorder())
                 // ),
-
+              
                 style: ElevatedButton.styleFrom(
                 //   elevation: WidgetStatePropertyAll(10),
                   backgroundColor: (const Color.fromARGB(255, 19, 63, 99)),
@@ -111,9 +111,9 @@ class _CurrencyCoverterMaterialPage extends State<CurrencyConverterMaterialPage>
                   });
                 },
                 child: const Text('Convert'),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
