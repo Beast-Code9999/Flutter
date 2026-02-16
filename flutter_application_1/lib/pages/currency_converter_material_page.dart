@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 
-class CurrencyConverterMaterialPage extends StatelessWidget {
+  // 1. Create a variable that stores the converted currency value
+  // 2. create a funciton that multiplies the value 
+  // 3. Store updated value in the variable
+  // 4. Display the value
+
+class CurrencyConverterMaterialPage extends StatefulWidget {
   const CurrencyConverterMaterialPage({super.key});
+
+  @override
+  State<CurrencyConverterMaterialPage> createState() {
+    return _CurrencyCoverterMaterialPage();
+  }
+}
+
+class _CurrencyCoverterMaterialPage extends State<CurrencyConverterMaterialPage> {
+  final TextEditingController textEditingController = TextEditingController();
+  double result = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +51,9 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Text
-            const Text(
-              "0",
-              style: TextStyle(
+            Text(
+              'AUD $result', // text = result
+              style: const TextStyle(
                 fontSize: 45,
                 fontWeight: FontWeight.w800,
                 color: Color.fromARGB(255, 0, 0, 0),
@@ -50,6 +65,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 10, 20),
               child: TextField(
+                controller: textEditingController,
                 style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 decoration: InputDecoration(
                   hintText: 'Please enter the amount in USD',
@@ -88,7 +104,12 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                   minimumSize: (const Size(double.infinity, 50)),
                   shape: (const RoundedRectangleBorder())
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  // build(context);
+                  setState(() {
+                    result = double.parse(textEditingController.text) * 1.41;
+                  });
+                },
                 child: const Text('Convert'),
               ),
             )
@@ -98,3 +119,5 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
     );
   }
 }
+
+
