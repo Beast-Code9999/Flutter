@@ -10,6 +10,12 @@ class CurrencyCoverterCupertinoPage extends StatefulWidget {
 class _CurrencyCoverterCupertinoPageState extends State<CurrencyCoverterCupertinoPage> {
   final TextEditingController textEditingController = TextEditingController();
   double result = 0;
+  
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

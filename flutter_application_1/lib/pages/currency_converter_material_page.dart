@@ -19,6 +19,12 @@ class _CurrencyCoverterMaterialPage extends State<CurrencyConverterMaterialPage>
   double result = 0;
 
   @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     // add border
     final border = OutlineInputBorder(
